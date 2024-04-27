@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blogify</title>
+    <%- include('./partials/head') %>
+</head>
+
+<body>
+    <%- include('./partials/navbar') %>
+    
+    <div class="container mt-4">
+            <div>
+                <% if (locals.error) { %>
+                    <div class="alert alert-danger" role="alert">
+                        <%= error %>
+                      </div>
+                        <% } %>
+            </div>
+            
+            <form action="/user/signup" method="post">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Full Name</label>
+                    <input type="text" name="fullName" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <span class="ms-4">Already account created - </span> <a href="/user/signin" class="text-primary">Signin</a>
+                </div>
+                </div>
+            </form>
+        </div>
+        <%- include('./partials/script') %>
+</body>
+
+</html>

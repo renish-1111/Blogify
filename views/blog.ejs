@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blogify</title>
+    <%- include('./partials/head') %>
+</head>
+
+<body>
+    <%- include('./partials/navbar') %>
+
+        <div class="container">
+            <form action="/blog" method="post" enctype="multipart/form-data">
+
+                <div class="form-floating mb-3">
+                    <div class="mb-2">
+                        <label for="title" class="form-label form-control-lg">Title</label>
+                        <input type="text" name="title" class="form-control" id="title" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-2">
+                        <label for="body" class="form-label form-control-lg">Body</label>
+                        <textarea name="body" class="form-control" id="body" rows="6"></textarea>
+                    </div>
+                    <div class="mb-2">
+                        <label for="coverImg" class="form-label form-control-lg">Cover Img</label>
+                        <input class="form-control" name="coverImageURL" type="file" id="coverImg">
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+            </form>
+        </div>
+
+        <%- include('./partials/script') %>
+</body>
+
+</html>
