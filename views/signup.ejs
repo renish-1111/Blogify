@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blogify</title>
     <%- include('./partials/head') %>
+    <%- include('./partials/style') %>
+
 </head>
 
 <body>
@@ -30,15 +32,14 @@
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
                     <input type="email" name="email" class="form-control" id="exampleInputEmail1"
                         aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    <div id="emailHelp" class="form-text" style="color: white;">We'll never share your email with anyone else.</div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <span class="ms-4">Already account created - </span> <a href="/user/signin" class="text-primary">Signin</a>
+                    <button type="submit" class="btn" style="background: #a55233; color: white;">Submit</button>
                 </div>
                 </div>
             </form>

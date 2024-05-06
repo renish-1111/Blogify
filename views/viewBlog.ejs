@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blogify</title>
     <%- include('./partials/head') %>
+    <%- include('./partials/style') %>
+
 </head>
 
 <body>
@@ -27,20 +29,20 @@
                 <img src="<%= blog.coverImageURL %>" style="width: 40vw;" alt="" srcset="">
             </div>
 
-            <pre class="m-3""> <%= blog.body %> </pre>
+            <pre class="m-3 "> <%= blog.body %> </pre>
         </div>
         
-        <% if (locals.user) { %>
-            <h1>Write a comment</h1>
-            <div class=" container mt-5">
-                <form class="mb-3" method="post" action='/blog/comment/<%= blog._id %>'>
-                    <input type="text" name="content" class="form-control" id="comment" placeholder="Enter your comment">
-                    <button type="submit" class="btn btn-primary mt-3">ADD</button>
-                </form>
-            </div>
-            
-            <% } %>
-            <div class="container ">
+        <div class="container">
+                <% if (locals.user) { %>
+                    <h1>Write a comment</h1>
+                    <div class=" container mt-3">
+                        <form class="mb-3" method="post" action='/blog/comment/<%= blog._id %>'>
+                            <input type="text" name="content" class="form-control" id="comment" placeholder="Enter your comment">
+                            <button type="submit"  style="background: #a55233; color: white;" class="btn mt-3">ADD</button>
+                        </form>
+                    </div>
+                    
+                    <% } %>
                 <h1>Comments (<%= comment.length %>)</h1>
                 <% comment.forEach(comment => { %>
                     <div class="border p-2 my-3">

@@ -6,22 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blogify</title>
     <%- include('./partials/head') %>
+    <%- include('./partials/style') %>
 </head>
 
 <body>
     <%- include('./partials/navbar') %>
 
-        <div class="container">
-            <div class="row row-cols-3 justify-content-lg-around ">
+        <div class="container ">
+            <div class="row row-cols-3 justify-content-around">
 
                 <% blogs.forEach(blog=> { %>
-                    <div class="card my-3" style="width: 22rem;">
-                        <img class='mt-3' src="<%= blog.coverImageURL%>" class="card-img-top" alt="...">
+                    <div class="card my-3" style="width: 22rem; background:#f3bc77;" >
+                        <img class='mt-3' style="height: 17rem;" src="<%= blog.coverImageURL%>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <%= blog.title %>
                             </h5>
-                            <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
+                            <a href="/blog/<%= blog._id %>" style="background: #a55233; color: white;" class="btn bottom-0">View</a>
                         </div>
                     </div>
                     <% }) %>
